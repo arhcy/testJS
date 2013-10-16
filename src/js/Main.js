@@ -7,11 +7,12 @@ var BUILD = "debug";
 * Main class of the app.
 */
 
-	var fNum=800;
+var fNum=800;
 var flArr=new Array(fNum);
 var flSpeed=new Array(fNum);
 var flNames=new Array("assets/snowfl_1.png","assets/snowfl_2.png","assets/snowfl_3.png");
 var im={};
+var tf={};
 
 
 function Main(){}
@@ -54,6 +55,14 @@ Main.prototype.initialize = function()
 
 	
 	
+	
+	
+
+	
+	
+	
+	
+	
 	//im.src=;
 	im = new createjs.Bitmap("assets/sky1.png");
 	this.stage.addChild(im);
@@ -70,7 +79,12 @@ Main.prototype.initialize = function()
 		//this.stage.update();
 	}
 	
+
 	
+	
+	tf=new createjs.Text("10", "30px Arial", "#FFF");
+	this.stage.addChild(tf);
+	//this.tf.text="ddsfdsfd";
 	//this.stage.update();
 }
 
@@ -84,8 +98,13 @@ Main.prototype.initialize = function()
 */
 Main.prototype.tick = function(event)
 {
+
+	
 	onTick();
+	
 	this.stage.update();
+	
+tf.text=createjs.Ticker.getMeasuredFPS();
 }
 
 
@@ -94,6 +113,7 @@ onTick = function(){
 		flArr[i].rotation+=flSpeed[i];
 		
 		//this.stage.update();
+		
 	}
 	
 }
